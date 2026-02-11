@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<?php include 'header.php'; ?>
+</head>
+
+<main>
+    <h2>Control Flow and Loops</h2>
+
+    <h3>if Else - Voting Eligibility:</h3>
+    <form method="post">
+        <p>
+            Name:
+            <input type="text" name="name" required>
+        </p>
+        <p>
+            Age:
+            <input type="number" name="age" required>
+        </p>
+        <input type="submit" name="submit" value="Check Eligibility">
+    </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+
+        if ($age >= 18) {
+            echo "<h3>Hello $name, you are eligible for voting.</h3>";
+        } else {
+            echo "<h3>Hello $name, you are not eligible for voting.</h3>";
+        }
+    }
+    ?>
+
+        <h2>Switch Case</h2>
+        <h3>Monthly Holiday Check:</h3>
+
+    <?php
+    $currentmonth = date("F");
+
+    switch ($currentmonth) {
+        case "August":
+            echo "<h3>It's August, so it's still holiday.</h3>";
+            break;
+
+        default:
+            echo "<h3>Not August, this is $month so I don't have any holidays.</h3>";
+    }
+    ?>
+</main>
+
+<?php include 'footer.php'; ?>
+
+
+
+
+</main>
+
+<?php include 'footer.php'; ?>
+</html>
